@@ -1,0 +1,117 @@
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for 
+multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print 
+"FizzBuzz".
+
+for(n in 1:100){
+if(n %% 3 & n %% 5 == 0){print("FizzBuzz")}
+else if(n %% 3 ==  0){print("Fizz")}
+else if(n %% 5 == 0){print("Buzz")}
+else
+print(n)
+}
+
+Write a program to generate the Fibonacci sequence up to 100.
+#include<stdio.h>
+int main()
+{
+	int a, b, result, i;
+a = 0;
+b = 1;
+for(i = 1; i <= 100; i++){
+	printf("%d", a);
+	result = a + b;
+	a = b;
+	b = result;
+}
+}
+
+Write a program that takes an integer as input and returns true if the input is a power of two.
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int num;
+	int n;
+	printf("Enter num\n");
+	scanf("%d",&num);
+	n = num / 2;
+	if(n == 1){
+		printf("True");
+	}else{
+		printf("False");
+	}
+}
+
+Write a program that accepts a string as input, capitalizes the first letter of each word in the 
+string, and then returns the result string.
+#include <stdio.h>
+#define MAX 100
+
+int main()
+{
+    char str[MAX] = { 0 };
+    int i;
+    printf("Enter a string: ");
+    scanf("%[^\n]s", str); 
+    for (i = 0; str[i] != '\0'; i++) {
+        if (i == 0) {
+            if ((str[i] >= 'a' && str[i] <= 'z'))
+                str[i] = str[i] - 32;
+            continue; 
+        }
+        if (str[i] == ' ') 
+        {
+            ++i;
+            if (str[i] >= 'a' && str[i] <= 'z') {
+                str[i] = str[i] - 32;
+                continue; 
+            }
+        }
+        else {
+            if (str[i] >= 'A' && str[i] <= 'Z')
+                str[i] = str[i] + 32;
+        }
+    }
+
+    printf("Capitalize string is: %s\n", str);
+
+    return 0;
+}
+
+Write a program that takes an integer as input and returns an integer with reversed digit 
+ordering.
+#include<stdio.h>
+int main(int argc, char** argv)
+{
+	int num, reversed_num = 0, rem;
+	printf("Enter an integer:");
+	scanf("%d",&num);
+	while(num != 0){
+		rem = num % 10;
+		reversed_num = reversed_num * 10 + rem;
+		num /= 10;
+	}
+	printf("Reversed_num = %d",reversed_num );
+	return 0;
+}
+
+Write a program that counts the number of vowels in a sentence.
+#include <stdio.h>
+int main()
+{
+  int c = 0, count = 0;
+  char s[1000];
+
+  printf("Input a string\n");
+  gets(s);
+
+  while (s[c] != '\0') {
+    if (s[c] == 'a' || s[c] == 'A' || s[c] == 'e' || s[c] == 'E' || s[c] == 'i' || s[c] == 'I' || s[c] =='o' || s[c]=='O' || s[c] == 'u' || s[c] == 'U')
+      count++;
+    c++;
+  }
+
+  printf("Number of vowels in the string: %d", count);
+
+  return 0;
+}
